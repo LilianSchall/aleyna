@@ -6,50 +6,154 @@ import ScrollReveal from "../components/ScrollReveal";
 import InteractiveGalleryGrid from "../components/InteractiveGalleryGrid";
 import DynamicLighting from "../components/DynamicLighting";
 import { InstagramIcon, Mail } from "lucide-react";
+import MainPicture from "../artworks/00_70x40_basel_2024.png";
+import first from "../artworks/01_30x42_basel_2024.jpg";
+import second from "../artworks/02_70x40_paris_2024.jpg";
+import third from "../artworks/03_150x200_ny_2024.jpg";
+import fourth from "../artworks/04_80x100_solo_2020.jpg";
+import fifth from "../artworks/05_80x100_solo_2020.jpg";
+import sixth from "../artworks/06_80x100_solo_2020.jpg";
+import seventh from "../artworks/07_50x60_solo_2020.jpg";
+import eigth from "../artworks/08_50x60_solo_2020.jpg";
+import ninth from "../artworks/09_50x60_solo_2020.jpg";
+import tenth from "../artworks/10_50x60_solo_2020.jpg";
+import eleventh from "../artworks/11_50x60_solo_2020.jpg";
+import twelfth from "../artworks/12_50x60_solo_2020.jpg";
+import thirteenth from "../artworks/13_50x60_solo_2020.jpg";
+import fourteenth from "../artworks/14_50x60_solo_2020.jpg";
+import fifteenth from "../artworks/15_50x60_solo_2020.jpg";
+import sixteenth from "../artworks/16_50x60_solo_2020.jpg";
+import author from "../artworks/author.jpg";
 
 export default function Home() {
   const featuredArtworks = [
     {
       id: 1,
-      title: "Autumn Reflections",
-      year: "2023",
-      dimensions: "36 × 48 inches",
+      title: "Art Basel Miami",
+      year: "2024",
+      dimensions: "30 × 42 inches",
       medium: "Oil on canvas",
+      source: first,
     },
     {
       id: 2,
-      title: "Serenity in Blue",
-      year: "2022",
-      dimensions: "24 × 30 inches",
-      medium: "Acrylic on canvas",
+      title: "Art Basel Paris",
+      year: "2024",
+      dimensions: "70 × 40 inches",
+      medium: "Oil on canvas",
+      source: second,
     },
     {
       id: 3,
-      title: "Urban Fragments",
-      year: "2021",
-      dimensions: "40 × 60 inches",
-      medium: "Mixed media",
+      title: "Volta Art Fair New York",
+      year: "2024",
+      dimensions: "150 × 200 inches",
+      medium: "Oil on canvas",
+      source: third,
     },
     {
       id: 4,
-      title: "Ethereal Light",
-      year: "2023",
-      dimensions: "18 × 24 inches",
-      medium: "Watercolor",
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "80 × 100 inches",
+      medium: "Oil on canvas",
+      source: fourth,
     },
     {
       id: 5,
-      title: "Contemplation",
-      year: "2022",
-      dimensions: "30 × 30 inches",
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "80 × 100 inches",
       medium: "Oil on canvas",
+      source: fifth,
     },
     {
       id: 6,
-      title: "Whispers of Nature",
-      year: "2021",
-      dimensions: "36 × 48 inches",
-      medium: "Acrylic on canvas",
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "80 × 100 inches",
+      medium: "Oil on canvas",
+      source: sixth,
+    },
+    {
+      id: 7,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: seventh,
+    },
+    {
+      id: 8,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: eigth,
+    },
+    {
+      id: 9,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: ninth,
+    },
+    {
+      id: 10,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: tenth,
+    },
+    {
+      id: 11,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: eleventh,
+    },
+    {
+      id: 12,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: twelfth,
+    },
+    {
+      id: 13,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: thirteenth,
+    },
+    {
+      id: 14,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: fourteenth,
+    },
+    {
+      id: 15,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: fifteenth,
+    },
+    {
+      id: 16,
+      title: "Solo Show",
+      year: "2020",
+      dimensions: "50 × 60 inches",
+      medium: "Oil on canvas",
+      source: sixteenth,
     },
   ];
 
@@ -107,13 +211,6 @@ export default function Home() {
     },
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="relative">
       <DynamicLighting />
@@ -147,9 +244,9 @@ export default function Home() {
             {/* Featured artwork preview */}
             <div className="lg:col-span-5 order-1 lg:order-2 mb-6 lg:mb-0">
               <ScrollReveal direction="right" delay={300}>
-                <div className="relative aspect-[16/9] sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/4] bg-neutral-900 rounded-sm overflow-hidden">
+                <div className="relative aspect-[3/4] sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/4] bg-neutral-900 rounded-sm overflow-hidden">
                   <img
-                    src="https://picsum.photos/800/600?random=featured"
+                    src={MainPicture}
                     alt="Featured artwork"
                     className="w-full h-full object-cover"
                   />
@@ -159,10 +256,10 @@ export default function Home() {
                       Featured Work
                     </p>
                     <h3 className="text-sm md:text-base lg:text-xl font-light">
-                      Autumn Reflections
+                      Art Basel Paris 2024
                     </h3>
                     <p className="text-xs text-neutral-400">
-                      2023 • Oil on canvas
+                      2024 • Oil on canvas
                     </p>
                   </div>
                 </div>
@@ -215,7 +312,7 @@ export default function Home() {
             <ScrollReveal direction="left" delay={400}>
               <div className="relative aspect-[3/4] bg-neutral-900">
                 <img
-                  src="https://picsum.photos/800/600?random=portrait"
+                  src={author}
                   alt="Artist portrait"
                   className="w-full h-full object-cover"
                 />
