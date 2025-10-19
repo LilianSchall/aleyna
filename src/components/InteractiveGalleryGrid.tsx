@@ -1,9 +1,9 @@
 interface Artwork {
   id: number;
   title: string;
-  year: string;
+  year: string | null;
   dimensions: string;
-  medium: string;
+  medium: string | null;
   source: any;
 }
 
@@ -32,7 +32,9 @@ export default function InteractiveGalleryGrid({
               {artwork.title}
             </h3>
             <p className="text-neutral-400 text-xs md:text-sm">
-              {artwork.year} • {artwork.medium}
+              {artwork.year !== null && artwork.medium !== null
+                ? artwork.year + " • " + artwork.medium
+                : ""}
             </p>
             <p className="text-neutral-500 text-xs mt-1 md:hidden">
               {artwork.dimensions}

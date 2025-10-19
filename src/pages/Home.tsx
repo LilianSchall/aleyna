@@ -5,158 +5,13 @@ import AnimatedUnderline from "../components/AnimatedUnderline";
 import ScrollReveal from "../components/ScrollReveal";
 import InteractiveGalleryGrid from "../components/InteractiveGalleryGrid";
 import DynamicLighting from "../components/DynamicLighting";
-import { InstagramIcon, Mail } from "lucide-react";
+import { InstagramIcon, Mail, ExternalLink } from "lucide-react";
 import MainPicture from "../artworks/00_70x40_basel_2024.png";
-import first from "../artworks/01_30x42_basel_2024.jpg";
-import second from "../artworks/02_70x40_paris_2024.jpg";
-import third from "../artworks/03_150x200_ny_2024.jpg";
-import fourth from "../artworks/04_80x100_solo_2020.jpg";
-import fifth from "../artworks/05_80x100_solo_2020.jpg";
-import sixth from "../artworks/06_80x100_solo_2020.jpg";
-import seventh from "../artworks/07_50x60_solo_2020.jpg";
-import eigth from "../artworks/08_50x60_solo_2020.jpg";
-import ninth from "../artworks/09_50x60_solo_2020.jpg";
-import tenth from "../artworks/10_50x60_solo_2020.jpg";
-import eleventh from "../artworks/11_50x60_solo_2020.jpg";
-import twelfth from "../artworks/12_50x60_solo_2020.jpg";
-import thirteenth from "../artworks/13_50x60_solo_2020.jpg";
-import fourteenth from "../artworks/14_50x60_solo_2020.jpg";
-import fifteenth from "../artworks/15_50x60_solo_2020.jpg";
-import sixteenth from "../artworks/16_50x60_solo_2020.jpg";
+import { featuredArtworks } from "./artworks";
 import author from "../artworks/author.jpg";
+import { featuredSketches } from "./sketches";
 
 export default function Home() {
-  const featuredArtworks = [
-    {
-      id: 1,
-      title: "Art Basel Miami",
-      year: "2024",
-      dimensions: "30 × 42 inches",
-      medium: "Oil on canvas",
-      source: first,
-    },
-    {
-      id: 2,
-      title: "Art Basel Paris",
-      year: "2024",
-      dimensions: "70 × 40 inches",
-      medium: "Oil on canvas",
-      source: second,
-    },
-    {
-      id: 3,
-      title: "Volta Art Fair New York",
-      year: "2024",
-      dimensions: "150 × 200 inches",
-      medium: "Oil on canvas",
-      source: third,
-    },
-    {
-      id: 4,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "80 × 100 inches",
-      medium: "Oil on canvas",
-      source: fourth,
-    },
-    {
-      id: 5,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "80 × 100 inches",
-      medium: "Oil on canvas",
-      source: fifth,
-    },
-    {
-      id: 6,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "80 × 100 inches",
-      medium: "Oil on canvas",
-      source: sixth,
-    },
-    {
-      id: 7,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: seventh,
-    },
-    {
-      id: 8,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: eigth,
-    },
-    {
-      id: 9,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: ninth,
-    },
-    {
-      id: 10,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: tenth,
-    },
-    {
-      id: 11,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: eleventh,
-    },
-    {
-      id: 12,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: twelfth,
-    },
-    {
-      id: 13,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: thirteenth,
-    },
-    {
-      id: 14,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: fourteenth,
-    },
-    {
-      id: 15,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: fifteenth,
-    },
-    {
-      id: 16,
-      title: "Solo Show",
-      year: "2020",
-      dimensions: "50 × 60 inches",
-      medium: "Oil on canvas",
-      source: sixteenth,
-    },
-  ];
-
   const pastExpositions = [
     {
       id: 1,
@@ -216,26 +71,19 @@ export default function Home() {
       <DynamicLighting />
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="min-h-screen flex items-center relative z-10"
-      >
+      <section id="home" className="min-h-screen flex relative z-10">
         <div className="container mx-auto px-4 py-8 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 md:space-y-8 order-2 lg:order-1">
               <ScrollReveal direction="up" delay={200}>
                 <KineticTypography
-                  text="The Art of Expression"
+                  text="Aleyna Aygün"
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tight leading-tight"
                 />
-              </ScrollReveal>
-
-              <ScrollReveal direction="up" delay={400}>
-                <div className="max-w-xl">
+                <div className="max-w-xl py-4">
                   <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-400 leading-relaxed font-light">
-                    Exploring the boundaries between reality and imagination
-                    through color, texture, and form. Each piece tells a story
-                    of emotion and experience.
+                    Exploring Art through life stories and vivid imagery. Each
+                    piece tells a story of emotion and experience.
                   </p>
                 </div>
               </ScrollReveal>
@@ -270,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-16 md:py-24 lg:py-32 relative z-10">
+      <section id="gallery" className="relative z-10">
         <div className="container mx-auto px-4">
           <ScrollReveal direction="up" delay={200}>
             <div className="text-center mb-12 md:mb-16">
@@ -288,6 +136,29 @@ export default function Home() {
 
           <ScrollReveal direction="up" delay={400}>
             <InteractiveGalleryGrid artworks={featuredArtworks} />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Sketech Section */}
+      <section id="sketch" className="py-16 md:py-24 lg:py-32 relative z-10">
+        <div className="container mx-auto px-4">
+          <ScrollReveal direction="up" delay={200}>
+            <div className="text-center mb-12 md:mb-16">
+              <AnimatedUnderline>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
+                  Sketch
+                </h2>
+              </AnimatedUnderline>
+              <p className="text-neutral-500 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                A look into the preliminary sketches that lay the foundations of
+                my creations.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={400}>
+            <InteractiveGalleryGrid artworks={featuredSketches} />
           </ScrollReveal>
         </div>
       </section>
@@ -485,7 +356,12 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="space-y-6 md:space-y-10">
+                <a
+                  href="https://www.instagram.com/aleynasoffstage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block space-y-6 md:space-y-10 hover:bg-neutral-900/50 transition-colors duration-300 rounded-sm group"
+                >
                   <div className="flex items-start gap-4 md:gap-6">
                     <InstagramIcon className="w-5 h-5 md:w-6 md:h-6 mt-1 text-neutral-400 flex-shrink-0" />
                     <div>
@@ -497,7 +373,25 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </a>
+                <a
+                  href="https://linktr.ee/aleynaaygun"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block space-y-6 md:space-y-10 hover:bg-neutral-900/50 transition-colors duration-300 rounded-sm group"
+                >
+                  <div className="flex items-start gap-4 md:gap-6">
+                    <ExternalLink className="w-5 h-5 md:w-6 md:h-6 mt-1 text-neutral-400 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg md:text-xl font-normal mb-1">
+                        LinkTree
+                      </h3>
+                      <p className="text-neutral-400 text-sm md:text-base">
+                        @aleynaaygun
+                      </p>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </ScrollReveal>
