@@ -14,6 +14,11 @@ import thirteenth from "../artworks/13_50x60_solo_2020.jpg";
 import fourteenth from "../artworks/14_50x60_solo_2020.jpg";
 import fifteenth from "../artworks/15_50x60_solo_2020.jpg";
 import sixteenth from "../artworks/16_50x60_solo_2020.jpg";
+import seventeenth from "../artworks/17_42x29_hamptons_2024.jpg";
+import eighteenth from "../artworks/18_29x42_hamptons_2024.jpg";
+import nineteenth from "../artworks/19_29x42_hamptons_2024.jpg";
+import twentieth from "../artworks/20_42x29_hamptons_2024.jpg";
+import twentyfirst from "../artworks/21_29x42_private_2024.jpg";
 
 export const featuredArtworks = [
   {
@@ -40,6 +45,47 @@ export const featuredArtworks = [
     medium: "Oil on canvas",
     source: third,
   },
+  {
+    id: 17,
+    title: "Hamptons Fine Arts Fair New York (sold)",
+    year: "2024",
+    dimensions: "42 × 29 inches",
+    medium: "Oil on canvas",
+    source: seventeenth,
+  },
+  {
+    id: 18,
+    title: "Hamptons Fine Arts Fair New York (sold)",
+    year: "2024",
+    dimensions: "29 × 42 inches",
+    medium: "Oil on canvas",
+    source: eighteenth,
+  },
+  {
+    id: 19,
+    title: "Hamptons Fine Arts Fair New York (sold)",
+    year: "2024",
+    dimensions: "29 × 42 inches",
+    medium: "Oil on canvas",
+    source: nineteenth,
+  },
+  {
+    id: 20,
+    title: "Hamptons Fine Arts Fair New York (sold)",
+    year: "2024",
+    dimensions: "42 × 29 inches",
+    medium: "Oil on canvas",
+    source: twentieth,
+  },
+  {
+    id: 21,
+    title: "Private Collection",
+    year: "2024",
+    dimensions: "29 × 42 inches",
+    medium: "Oil on canvas",
+    source: twentyfirst,
+  },
+
   {
     id: 4,
     title: "Solo Show",

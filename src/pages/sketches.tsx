@@ -1,10 +1,11 @@
 import first from "../artworks/sketch_1.jpg";
 import second from "../artworks/sketch_2.jpg";
 import third from "../artworks/sketch_3.jpg";
+import fourth from "../artworks/sketch_4.jpg";
 
 export const featuredSketches = [
   {
-    id: 17,
+    id: 22,
     title: "",
     year: null,
     dimensions: "",
@@ -12,7 +13,7 @@ export const featuredSketches = [
     source: first,
   },
   {
-    id: 18,
+    id: 23,
     title: "",
     year: null,
     dimensions: "",
@@ -20,11 +21,19 @@ export const featuredSketches = [
     source: second,
   },
   {
-    id: 19,
+    id: 24,
     title: "",
     year: null,
     dimensions: "",
     medium: null,
     source: third,
+  },
+  {
+    id: 25,
+    title: "",
+    year: null,
+    dimensions: "",
+    medium: null,
+    source: fourth,
   },
 ];

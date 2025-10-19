@@ -5,11 +5,13 @@ import AnimatedUnderline from "../components/AnimatedUnderline";
 import ScrollReveal from "../components/ScrollReveal";
 import InteractiveGalleryGrid from "../components/InteractiveGalleryGrid";
 import DynamicLighting from "../components/DynamicLighting";
-import { InstagramIcon, Mail, ExternalLink } from "lucide-react";
-import MainPicture from "../artworks/00_70x40_basel_2024.png";
+import { InstagramIcon, Mail, ExternalLink, Book } from "lucide-react";
+import MainPicture from "../artworks/00_70x40_basel_2024.jpg";
 import { featuredArtworks } from "./artworks";
 import author from "../artworks/author.jpg";
 import { featuredSketches } from "./sketches";
+
+import "./Home.css";
 
 export default function Home() {
   const pastExpositions = [
@@ -68,14 +70,18 @@ export default function Home() {
 
   return (
     <div className="relative">
+      <span id="start"></span>
       <DynamicLighting />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex relative z-10">
-        <div className="container mx-auto px-4 py-8 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6 md:space-y-8 order-2 lg:order-1">
-              <ScrollReveal direction="up" delay={200}>
+      <ScrollReveal direction="right" delay={200}>
+        <section
+          id="home"
+          className="page-min-height flex items-center relative z-10"
+        >
+          <div className="container mx-auto px-4 py-8 md:py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-center">
+              <div className="lg:col-span-7 space-y-6 md:space-y-8 order-2 lg:order-1">
                 <KineticTypography
                   text="Aleyna Aygün"
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tight leading-tight"
@@ -86,12 +92,10 @@ export default function Home() {
                     piece tells a story of emotion and experience.
                   </p>
                 </div>
-              </ScrollReveal>
-            </div>
+              </div>
 
-            {/* Featured artwork preview */}
-            <div className="lg:col-span-5 order-1 lg:order-2 mb-6 lg:mb-0">
-              <ScrollReveal direction="right" delay={300}>
+              {/* Featured artwork preview */}
+              <div className="lg:col-span-5 order-1 lg:order-2 mb-6 lg:mb-0">
                 <div className="relative aspect-[3/4] sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/4] bg-neutral-900 rounded-sm overflow-hidden">
                   <img
                     src={MainPicture}
@@ -111,16 +115,16 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </ScrollReveal>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Gallery Section */}
       <section id="gallery" className="relative z-10">
         <div className="container mx-auto px-4">
-          <ScrollReveal direction="up" delay={200}>
+          <ScrollReveal direction="up" delay={100}>
             <div className="text-center mb-12 md:mb-16">
               <AnimatedUnderline>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
@@ -134,7 +138,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={400}>
+          <ScrollReveal direction="up" delay={100}>
             <InteractiveGalleryGrid artworks={featuredArtworks} />
           </ScrollReveal>
         </div>
@@ -143,7 +147,7 @@ export default function Home() {
       {/* Sketech Section */}
       <section id="sketch" className="py-16 md:py-24 lg:py-32 relative z-10">
         <div className="container mx-auto px-4">
-          <ScrollReveal direction="up" delay={200}>
+          <ScrollReveal direction="up" delay={100}>
             <div className="text-center mb-12 md:mb-16">
               <AnimatedUnderline>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
@@ -157,7 +161,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={400}>
+          <ScrollReveal direction="up" delay={100}>
             <InteractiveGalleryGrid artworks={featuredSketches} />
           </ScrollReveal>
         </div>
@@ -169,7 +173,7 @@ export default function Home() {
         className="py-16 md:py-24 lg:py-32 border-t border-neutral-800 relative z-10"
       >
         <div className="container mx-auto px-4">
-          <ScrollReveal direction="up" delay={200}>
+          <ScrollReveal direction="up" delay={100}>
             <div className="text-center mb-12 md:mb-16">
               <AnimatedUnderline>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
@@ -180,7 +184,7 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-            <ScrollReveal direction="left" delay={400}>
+            <ScrollReveal direction="left" delay={100}>
               <div className="relative aspect-[3/4] bg-neutral-900">
                 <img
                   src={author}
@@ -190,7 +194,7 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="right" delay={600}>
+            <ScrollReveal direction="right" delay={200}>
               <div className="space-y-4 md:space-y-6">
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   Aleyna Aygün was born in 2003 in Thann, in the Alsace region
@@ -327,7 +331,7 @@ export default function Home() {
         className="py-16 md:py-24 lg:py-32 border-t border-neutral-800 relative z-10"
       >
         <div className="container mx-auto px-4">
-          <ScrollReveal direction="up" delay={200}>
+          <ScrollReveal direction="up" delay={100}>
             <div className="text-center mb-12 md:mb-16">
               <AnimatedUnderline>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide">
@@ -337,7 +341,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={400}>
+          <ScrollReveal direction="up" delay={200}>
             <div className="max-w-2xl mx-auto">
               <p className="text-sm md:text-base lg:text-lg mb-8 md:mb-12 leading-relaxed">
                 For inquiries about commissions or exhibitions, please reach out
@@ -388,6 +392,60 @@ export default function Home() {
                       </h3>
                       <p className="text-neutral-400 text-sm md:text-base">
                         @aleynaaygun
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://open.substack.com/pub/aleynaaygun"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block space-y-6 md:space-y-10 hover:bg-neutral-900/50 transition-colors duration-300 rounded-sm group"
+                >
+                  <div className="flex items-start gap-4 md:gap-6">
+                    <ExternalLink className="w-5 h-5 md:w-6 md:h-6 mt-1 text-neutral-400 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg md:text-xl font-normal mb-1">
+                        My blog
+                      </h3>
+                      <p className="text-neutral-400 text-sm md:text-base">
+                        @aleynaaygun
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://books.apple.com/fr/book/le-paradoxe-du-développement-personnel/id6443251412?l=en-GB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block space-y-6 md:space-y-10 hover:bg-neutral-900/50 transition-colors duration-300 rounded-sm group"
+                >
+                  <div className="flex items-start gap-4 md:gap-6">
+                    <Book className="w-5 h-5 md:w-6 md:h-6 mt-1 text-neutral-400 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg md:text-xl font-normal mb-1">
+                        My first book
+                      </h3>
+                      <p className="text-neutral-400 text-sm md:text-base">
+                        Le paradoxe du développement personnel
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://books.apple.com/fr/book/e-crits-sur-le-bonheur/id6443202813?l=en-GB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block space-y-6 md:space-y-10 hover:bg-neutral-900/50 transition-colors duration-300 rounded-sm group"
+                >
+                  <div className="flex items-start gap-4 md:gap-6">
+                    <Book className="w-5 h-5 md:w-6 md:h-6 mt-1 text-neutral-400 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg md:text-xl font-normal mb-1">
+                        My second book
+                      </h3>
+                      <p className="text-neutral-400 text-sm md:text-base">
+                        Écrits sur le Bonheur
                       </p>
                     </div>
                   </div>

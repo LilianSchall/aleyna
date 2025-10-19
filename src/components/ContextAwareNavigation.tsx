@@ -39,23 +39,37 @@ export default function ContextAwareNavigation() {
     setIsMobileMenuOpen(false);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, withOffset: boolean) => {
     const element = document.getElementById(sectionId);
-    if (element) {
+    if (!element) {
+      handleMobileMenuClose();
+      return;
+    }
+
+    if (withOffset) {
+      const yOffset = -100; // Adjust this value based on your fixed header height
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
       element.scrollIntoView({ behavior: "smooth" });
     }
+
     handleMobileMenuClose();
   };
 
   const NavLink = ({
     section,
+    withOffset = false,
     children,
   }: {
     section: string;
+    withOffset?: boolean;
     children: React.ReactNode;
   }) => (
     <button
-      onClick={() => scrollToSection(section)}
+      onClick={() => scrollToSection(section, withOffset)}
       className={`text-sm uppercase tracking-widest transition-all duration-300 relative group ${
         activeSection === section
           ? "text-white"
@@ -79,7 +93,7 @@ export default function ContextAwareNavigation() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between py-4">
           <button
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection("start", true)}
             className="text-lg tracking-wide"
           >
             Aleyna
@@ -87,7 +101,9 @@ export default function ContextAwareNavigation() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <NavLink section="gallery">Gallery</NavLink>
+            <NavLink section="gallery" withOffset>
+              Gallery
+            </NavLink>
             <NavLink section="biography">Biography</NavLink>
             <NavLink section="contact">Contact</NavLink>
           </nav>
@@ -126,7 +142,9 @@ export default function ContextAwareNavigation() {
           }`}
         >
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-6">
-            <NavLink section="gallery">Gallery</NavLink>
+            <NavLink section="gallery" withOffset>
+              Gallery
+            </NavLink>
             <NavLink section="biography">Biography</NavLink>
             <NavLink section="contact">Contact</NavLink>
           </nav>
@@ -137,7 +155,7 @@ export default function ContextAwareNavigation() {
       <header className="border-b border-neutral-800 relative z-20">
         <div className="container mx-auto px-4 flex items-center justify-between py-4 md:py-6">
           <button
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection("start", true)}
             className="text-xl md:text-2xl tracking-wide font-light"
           >
             Aleyna
@@ -145,7 +163,9 @@ export default function ContextAwareNavigation() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <NavLink section="gallery">Gallery</NavLink>
+            <NavLink section="gallery" withOffset>
+              Gallery
+            </NavLink>
             <NavLink section="biography">Biography</NavLink>
             <NavLink section="contact">Contact</NavLink>
           </nav>
@@ -171,7 +191,9 @@ export default function ContextAwareNavigation() {
           }`}
         >
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-6">
-            <NavLink section="gallery">Gallery</NavLink>
+            <NavLink section="gallery" withOffset>
+              Gallery
+            </NavLink>
             <NavLink section="biography">Biography</NavLink>
             <NavLink section="contact">Contact</NavLink>
           </nav>
