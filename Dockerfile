@@ -17,6 +17,7 @@ COPY index.html index.html
 COPY tsconfig.json tsconfig.json
 COPY tsconfig.app.json tsconfig.app.json
 COPY tsconfig.node.json tsconfig.node.json
+COPY tailwind.config.js tailwind.config.js
 COPY vite.config.ts vite.config.ts
 RUN npm run build
 
