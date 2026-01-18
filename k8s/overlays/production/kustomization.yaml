@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: aleyna
+
+resources:
+  - ../../base
+
+replicas:
+  - name: aleyna
+    count: 1
+
+images:
+  - name: ghcr.io/lilianschall/aleyna
+    newTag: latest
+
+labels:
+  - includeSelectors: true
+    pairs:
+      environment: production

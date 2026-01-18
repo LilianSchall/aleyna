@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aleyna
+  labels:
+    app: aleyna
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-system"
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - aleynaaygun.com
+        - www.aleynaaygun.com
+      secretName: aleyna-tls
+  rules:
+    - host: aleynaaygun.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: aleyna
+                port:
+                  number: 80
+    - host: www.aleynaaygun.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: aleyna
+                port:
+                  number: 80
